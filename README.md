@@ -14,7 +14,7 @@ S'il vous plaît **NE PAS FORK le projet** pour éviter de révéler votre solut
 
 Une fois le nouveau repo cloné sur votre espace de travail, il faudra **créer une nouvelle branche** avant de commencer à coder.
 
-Une fois que vous aurez fini, il faudra **créer une pull request vers la branche principale** et **m'ajouter en tant que collaborateur** pour que je puisse évaluer votre code.
+Une fois que vous aurez fini, il faudra **créer une pull request vers la branche principale** et **m'ajouter en tant que collaborateur** (cto@sparte.io) pour que je puisse évaluer votre code.
 
 ## Installation des dépendances
 `npm i`
