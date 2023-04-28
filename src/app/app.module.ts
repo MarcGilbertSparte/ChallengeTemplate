@@ -21,6 +21,7 @@ import { ChallengeComponent } from './pages/challenge/challenge.component';
 import { DataPreviewComponent } from './pages/data-preview/data-preview.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ChallengeService } from './services/challenge.service';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -32,7 +33,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HomePageComponent,
     ChallengeComponent,
     DataPreviewComponent,
-    EchartComponent
+    EchartComponent,
+    DataTableComponent
   ],
   imports: [
     CommonModule,

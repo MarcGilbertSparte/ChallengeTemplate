@@ -14,7 +14,7 @@ interface DataTableInterface {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataPreviewComponent {
-  //ATTENTION: Ne pas modifier ce component ou ses méthodes, il sert uniquement à la visualisation des données
+  //WARN: Ne pas modifier ce component ou ses méthodes, il sert uniquement à la visualisation des données
   public tables: DataTableInterface[];
   constructor() {
     this.tables = [];
@@ -27,11 +27,5 @@ export class DataPreviewComponent {
         })
       }
     });
-  }
-  getDataForCell = (dataLine: any, key: string) => {
-    if (typeof dataLine[key] === "object") {
-      return dataLine[key].map((data: any) => !!data.values ? `${data.name} (${data.values.length})` : data).join(", ")
-    }
-    else return dataLine[key];
   }
 }

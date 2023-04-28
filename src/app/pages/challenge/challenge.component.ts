@@ -119,7 +119,7 @@ export class ChallengeComponent implements AfterViewInit {
   }
 
   /**
-   * TODO: 2. Récupérer le nombre de systemes par environnement
+   * TODO: 3. Récupérer le nombre de systemes par environnement
    * @returns {PieData[]} sous la forme [{name, value}]
    */
   get systemByEnvData(): PieData[] {
@@ -127,7 +127,7 @@ export class ChallengeComponent implements AfterViewInit {
   }
 
   /**
-   * TODO: 3. Récupérer le nombre d'assets par systeme depuis this.systemsIdsForAssetPieChart
+   * TODO: 4. Récupérer le nombre d'assets par systeme depuis this.systemsIdsForAssetPieChart
    * @returns {PieData[]} sous la forme [{name, value}]
    */
   get assetBySystemData(): PieData[] {
@@ -142,7 +142,23 @@ export class ChallengeComponent implements AfterViewInit {
   }
 
   /**
-   * TODO: 6. récupérer les jours depuis challengeService.timeframe
+   * TODO: 5. récupérer les valeurs des températures des assets
+   * seul data[] doit être modifié
+   * @param system_id id du systeme concerné
+   * @returns Series pour le LineChart
+   */
+  getTemperaturesByAssetForSystem(system_id: string): LineSeriesOption[] {
+    return this.challengeService.getSystem(system_id).recursiveAssets
+      .filter(asset => asset.data.some(assetData => assetData.name === "temperature"))
+      .map(asset => ({
+        name: asset.label,
+        type: 'line',
+        data: []
+      }));
+  }
+
+  /**
+   * TODO: 7. récupérer les jours depuis challengeService.timeframe
    * tip: utiliser moment(hour).format('LL') pour récupérer le jour pour une heure donnée
    */
   get xAxisByDays(): string[] {
@@ -161,24 +177,8 @@ export class ChallengeComponent implements AfterViewInit {
   }
 
   /**
-   * TODO: 4. récupérer les valeurs des températures des assets
-   * seul data[] doit être modifié
-   * @param system_id id du systeme concerné
-   * @returns Series pour le LineChart
-   */
-  getTemperaturesByAssetForSystem(system_id: string): LineSeriesOption[] {
-    return this.challengeService.getSystem(system_id).recursiveAssets
-      .filter(asset => asset.data.some(assetData => assetData.name === "temperature"))
-      .map(asset => ({
-        name: asset.label,
-        type: 'line',
-        data: []
-      }));
-  }
-
-  /**
    * récupérer le nombre d'objets fabriqués par jour par machine
-   * TODO: 7. construire la map machineOutputData de telle sorte a ce qu'elle renvoie la somme des outputs par jour
+   * TODO: 8. construire la map machineOutputData de telle sorte a ce qu'elle renvoie la somme des outputs par jour
    * @returns Series pour le LineChart
    */
   getSerieForMachine(machine: Asset): BarSeriesOption {

@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.data-table {
+  width: 100%;
+  color: #707070;
+  border: 1px solid #707070;
+
+  td,
+  th {
+    border: 1px solid #E2E2E2;
+  }
+
+  .table-header {
+    text-transform: uppercase;
+    border-bottom: 1px solid #E2E2E2;
+    font-size: 25px;
+    letter-spacing: 0.1em;
+    line-height: 33px;
+  }
+
+  .table-keys {
+    th {
+      padding-left: 8px;
+      text-align: start !important;
+    }
+  }
+
+  .table-data {
+    td {
+      padding-left: 8px;
+    }
+  }
+}

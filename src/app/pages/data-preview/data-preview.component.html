@@ -7,22 +7,8 @@
              fxLayout="column"
              fxLayoutAlign="start stretch"
              fxLayoutGap="16px">
-      <table *ngFor="let table of tables"
-             class="data-table"
-             cellspacing="5px">
-        <thead class="table-header">
-          <tr>
-            <th colspan="100%">{{table.tableName}}</th>
-          </tr>
-        </thead>
-        <tr class="table-keys">
-          <th *ngFor="let key of table.tableKeys">{{key}}</th>
-        </tr>
-        <tr *ngFor="let dataLine of table.tableData"
-            class="table-data">
-          <td *ngFor="let key of table.tableKeys">{{getDataForCell(dataLine, key)}}</td>
-        </tr>
-      </table>
+      <!-- TODO: 2a. passer les données des tables au component data-table.component -->
+      <data-table *ngFor="let table of tables"></data-table>
     </section>
   </perfect-scrollbar>
 </section>
